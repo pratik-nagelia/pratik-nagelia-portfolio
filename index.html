@@ -123,9 +123,22 @@
     <section id="contact">
       <h2>Contact</h2>
       <div class="card contact-card">
-        <p>The fastest way to reach me is email — I usually reply within a day.</p>
+        <p>Prefer email? Write to <a href="mailto:pratik0204@gmail.com">pratik0204@gmail.com</a> — or send a message here and it lands in my inbox. I usually reply within a day.</p>
+        <form class="contact-form" action="https://formsubmit.co/pratik0204@gmail.com" method="POST">
+          <input type="hidden" name="_subject" value="New message from your portfolio site">
+          <input type="hidden" name="_captcha" value="false">
+          <label>Your name
+            <input type="text" name="name" autocomplete="name" required>
+          </label>
+          <label>Your email
+            <input type="email" name="email" autocomplete="email" required>
+          </label>
+          <label>Message
+            <textarea name="message" rows="5" required></textarea>
+          </label>
+          <button class="btn primary" type="submit">Send message</button>
+        </form>
         <div class="contact-row">
-          <a class="btn primary" href="mailto:pratik0204@gmail.com">pratik0204@gmail.com</a>
           <a class="btn" href="https://www.linkedin.com/in/pratik-nagelia" rel="noopener">LinkedIn</a>
           <a class="btn" href="https://github.com/pratik-nagelia" rel="noopener">GitHub</a>
         </div>
