@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pratik Nagelia — Software Engineer</title>
+  <meta name="description" content="Portfolio of Pratik Nagelia, Software Engineer working on payments privacy infrastructure.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Main">
+      <a class="brand" href="index.html">Pratik Nagelia</a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links">Menu</button>
+      <div class="nav-links" id="nav-links">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+        <a href="blog/">Blog</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="about">
+      <span class="eyebrow">Seattle, WA · Open to connect</span>
+      <h1>Pratik Nagelia</h1>
+      <p class="subtitle">Software Engineer · Payments Privacy Infrastructure @ Meta</p>
+      <p>I build privacy infrastructure for the Monetisation Fintech Platform. Previously I worked on Amazon Advertising campaign diagnostics and Flipkart's Ads Platform, with a focus on distributed systems, data pipelines, and performance.</p>
+      <div class="contact-row">
+        <a class="btn primary" href="#contact">Contact me</a>
+        <a class="btn" href="https://www.linkedin.com/in/pratik-nagelia" rel="noopener">LinkedIn</a>
+        <a class="btn" href="https://github.com/pratik-nagelia" rel="noopener">GitHub</a>
+        <a class="btn" href="blog/">Blog</a>
+      </div>
+    </section>
+
+    <section id="experience">
+      <h2>Experience</h2>
+      <article class="card">
+        <h3>Software Engineer — Meta, Payments Privacy Infra <span class="where">· Seattle, WA</span></h3>
+        <p class="when">Feb 2023 – Present</p>
+        <ul>
+          <li>Building payments privacy infrastructure for the Monetisation Fintech Platform.</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3>Software Development Engineer — Amazon, Amazon Advertising <span class="where">· Seattle, WA</span></h3>
+        <p class="when">Jun 2022 – Feb 2023</p>
+        <ul>
+          <li>Enabled keyword &amp; bid recommendations in campaign diagnostics; adoption drove impression improvement for 85% and click uplift for 65% of campaigns, ~5M/week additional conversion uplift.</li>
+          <li>Built a downstream change-propagation microservice from a Kafka-based stream to DynamoDB; tuned bootstrap for 3.5B entries from 9 days to under 10 hours via threadpool tuning.</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3>Senior Software Development Engineer — Flipkart, Ads Platform <span class="where">· Bangalore, India</span></h3>
+        <p class="when">Feb 2019 – Dec 2020</p>
+        <ul>
+          <li>Goal optimisation: designed microservices using ads performance metrics as feedback; enabled ~45% of advertising teams to exceed 100% of their targets.</li>
+          <li>Built real-time ads metadata enrichment and ingestion pipeline (2000+ ads/sec) on Apache Storm, HBase, Kafka; contributed HLD/LLD design docs.</li>
+          <li>Enabled multi-datacenter HBase cluster replication for disaster recovery; load-tested replication lag up to 19,000 QPS.</li>
+          <li>Cut client startup from 2.6 min to 40 sec via JVM profiling and GC tuning of the Kafka client library.</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3>Software Development Engineer I — Flipkart, Ads Platform <span class="where">· Bangalore, India</span></h3>
+        <p class="when">Jun 2017 – Jan 2019</p>
+        <ul>
+          <li>Exposed campaign-management APIs for ad creation; optimised MySQL queries for 24% latency improvement in the ads creation console.</li>
+          <li>Built ingestion pipeline integrating with Facebook Ads Manager to power a closed ads ecosystem.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section id="skills">
+      <h2>Technical skills</h2>
+      <div class="card">
+        <ul class="tags">
+          <li>Java</li><li>Python</li><li>C++</li><li>Go</li><li>SQL</li><li>JavaScript</li>
+          <li>Kafka</li><li>Storm</li><li>Spark</li><li>DynamoDB</li><li>MySQL</li><li>HBase</li>
+          <li>Redis</li><li>Cassandra</li><li>Elasticsearch</li><li>Aerospike</li>
+          <li>Docker</li><li>Kubernetes</li><li>AWS Lambda</li><li>ECS Fargate</li>
+          <li>Dropwizard</li><li>Hibernate</li><li>Flask</li><li>Grafana</li><li>Jaeger</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Academic projects</h2>
+      <article class="card">
+        <h3>Physician Attribution System <span class="where">· Stony Brook University Hospital</span></h3>
+        <p class="when">Jun 2021 – Dec 2021</p>
+        <p>Retrospectively identifies the physician attributed to a patient's care from EHR clinical data.</p>
+      </article>
+      <article class="card">
+        <h3>Automatic Answer Evaluation System <span class="where">· Birla Institute of Technology</span></h3>
+        <p class="when">May 2018 – May 2020</p>
+        <p>Undergraduate dissertation on automated evaluation of subjective answers using sentence similarity (WUP &amp; path similarity, cosine similarity) with NLP (NLTK, Python 3, Pandas).</p>
+      </article>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+      <div class="card">
+        <ul>
+          <li><strong>Stony Brook University</strong> — M.S., Computer Science (Jan 2021 – May 2022), Stony Brook, NY</li>
+          <li><strong>Birla Institute of Technology, Mesra</strong> — B.E., Computer Science (Aug 2013 – Jul 2017), India</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="blog-teaser">
+      <h2>Blog</h2>
+      <div class="card">
+        <p>I write occasional notes on distributed systems, performance tuning, and ads/privacy infrastructure.</p>
+        <p><a href="blog/">Read the blog →</a></p>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <div class="card contact-card">
+        <p>The fastest way to reach me is email — I usually reply within a day.</p>
+        <div class="contact-row">
+          <a class="btn primary" href="mailto:pratik0204@gmail.com">pratik0204@gmail.com</a>
+          <a class="btn" href="https://www.linkedin.com/in/pratik-nagelia" rel="noopener">LinkedIn</a>
+          <a class="btn" href="https://github.com/pratik-nagelia" rel="noopener">GitHub</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Pratik Nagelia · <a href="mailto:pratik0204@gmail.com">Email</a> · <a href="https://www.linkedin.com/in/pratik-nagelia" rel="noopener">LinkedIn</a> · <a href="https://github.com/pratik-nagelia" rel="noopener">GitHub</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

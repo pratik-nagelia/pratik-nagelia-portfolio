@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blog — Pratik Nagelia</title>
+  <meta name="description" content="Notes on distributed systems, performance, and ads/privacy infrastructure.">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Main">
+      <a class="brand" href="../index.html">Pratik Nagelia</a>
+      <div class="nav-links" id="nav-links">
+        <a href="../index.html">Home</a>
+        <a href="../index.html#experience">Experience</a>
+        <a href="../index.html#projects">Projects</a>
+        <a href="./">Blog</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Blog</h1>
+    <p>Occasional notes on distributed systems, performance tuning, and ads/privacy infrastructure.</p>
+    <ul class="post-list">
+      <li>
+        <a class="post-title" href="kafka-to-dynamodb-bootstrap.html">Tuning a Kafka-to-DynamoDB bootstrap from 9 days to 10 hours</a>
+        <span class="post-meta">Performance · 6 min read</span>
+        <p>How threadpool sizing and backpressure control cut the bootstrap time for 3.5B entries.</p>
+      </li>
+      <li>
+        <a class="post-title" href="ads-feedback-loops.html">Closing the loop: ads performance goals as feedback</a>
+        <span class="post-meta">Ads platforms · 5 min read</span>
+        <p>Design notes on goal-optimisation microservices that helped ~45% of teams exceed 100% of target.</p>
+      </li>
+      <li>
+        <a class="post-title" href="kafka-client-gc-tuning.html">Cutting client startup from 2.6 min to 40 seconds with GC tuning</a>
+        <span class="post-meta">JVM · 4 min read</span>
+        <p>JVM profiling, GC tuning, and what actually moved the needle on a Kafka client library.</p>
+      </li>
+    </ul>
+    <p><a href="../index.html">← Back to home</a></p>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Pratik Nagelia</p>
+  </footer>
+  <script src="../script.js"></script>
+</body>
+</html>

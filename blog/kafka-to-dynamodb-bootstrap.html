@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tuning a Kafka-to-DynamoDB bootstrap — Pratik Nagelia</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Main">
+      <a class="brand" href="../index.html">Pratik Nagelia</a>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a href="./">Blog</a>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <article class="post">
+      <h1>Tuning a Kafka-to-DynamoDB bootstrap from 9 days to 10 hours</h1>
+      <p class="post-meta">Performance · based on work at Amazon Advertising</p>
+      <p>Backfilling 3.5 billion entries from a Kafka-based stream into DynamoDB started with a naive estimate of 9 days. The fix was not one trick but three compounding ones.</p>
+      <h2>1. Measure the bottleneck first</h2>
+      <p>The consumer lag was healthy, so Kafka was not the problem. Write throttling on the DynamoDB side and an undersized producer threadpool were. Profiling showed threads blocked on downstream ack waits, not on CPU.</p>
+      <h2>2. Size the threadpool to the downstream</h2>
+      <p>We tuned the pool so that in-flight writes saturated provisioned write capacity without tripping throttles: enough concurrency to hide latency, with exponential backoff and jitter on throttled batches. Throughput scaled nearly linearly until the DynamoDB limit, then we stopped adding threads and raised capacity instead.</p>
+      <h2>3. Control backpressure end to end</h2>
+      <p>Batching writes, bounding queues, and shedding load at the consumer (rather than deep in the writer) kept memory flat and made progress predictable. Bootstrap time dropped to under 10 hours.</p>
+      <h2>Takeaway</h2>
+      <p>Threadpool tuning only helps once you know which downstream you are tuning against. Instrument first, then scale the pool to that limit — not to the number of cores.</p>
+    </article>
+    <p><a href="./">← All posts</a></p>
+  </main>
+  <footer class="site-footer"><p>© <span id="year"></span> Pratik Nagelia</p></footer>
+  <script src="../script.js"></script>
+</body>
+</html>

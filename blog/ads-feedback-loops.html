@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Closing the loop: ads performance goals as feedback — Pratik Nagelia</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Main">
+      <a class="brand" href="../index.html">Pratik Nagelia</a>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a href="./">Blog</a>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <article class="post">
+      <h1>Closing the loop: ads performance goals as feedback</h1>
+      <p class="post-meta">Ads platforms · based on work at Flipkart</p>
+      <p>Most ads tooling reports metrics. Goal optimisation goes one step further: it feeds performance metrics back into the system so campaigns steer toward their targets automatically.</p>
+      <h2>The design</h2>
+      <p>Small, single-purpose microservices each own one goal type. They read aggregated delivery and performance signals, compute the gap to target, and emit pacing or bidding adjustments through the same campaign-management APIs advertisers use — no shadow paths.</p>
+      <h2>Why it worked</h2>
+      <p>Treating goals as feedback control rather than dashboards changed the question from "what happened?" to "how far off target are we, and what corrects it?" Roughly 45% of advertising teams went on to achieve over 100% of their targets after adoption.</p>
+      <h2>Lesson</h2>
+      <p>Keep the loop small and observable: one metric in, one adjustment out, with a design doc (HLD/LLD) that states the control law explicitly. Distributed systems discipline (Storm topologies, Kafka, HBase underneath) matters, but the feedback framing is what made it legible.</p>
+    </article>
+    <p><a href="./">← All posts</a></p>
+  </main>
+  <footer class="site-footer"><p>© <span id="year"></span> Pratik Nagelia</p></footer>
+  <script src="../script.js"></script>
+</body>
+</html>

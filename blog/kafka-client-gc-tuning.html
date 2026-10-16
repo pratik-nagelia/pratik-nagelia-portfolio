@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cutting client startup with GC tuning — Pratik Nagelia</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Main">
+      <a class="brand" href="../index.html">Pratik Nagelia</a>
+      <div class="nav-links">
+        <a href="../index.html">Home</a>
+        <a href="./">Blog</a>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <article class="post">
+      <h1>Cutting client startup from 2.6 min to 40 seconds with GC tuning</h1>
+      <p class="post-meta">JVM · based on work at Flipkart</p>
+      <p>A Kafka client library took 2.6 minutes to start. The instinct was to blame the network; the profiler said otherwise.</p>
+      <h2>What the profiler showed</h2>
+      <p>Java Flight Recorder revealed long young-GC pauses during initialization: the client allocated heavily at startup, and default heap/GC settings turned that into stop-the-world churn.</p>
+      <h2>The fix</h2>
+      <p>Right-sizing the young generation, picking a lower-pause collector for the allocation pattern, and trimming throwaway allocations at startup brought initialization down to 40 seconds — no architectural rewrite required.</p>
+      <h2>Takeaway</h2>
+      <p>Profile before scaling. A 4× startup win came from GC ergonomics, not more hardware.</p>
+    </article>
+    <p><a href="./">← All posts</a></p>
+  </main>
+  <footer class="site-footer"><p>© <span id="year"></span> Pratik Nagelia</p></footer>
+  <script src="../script.js"></script>
+</body>
+</html>
